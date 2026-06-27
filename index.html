@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What do you think about Solstice?</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page">
+
+  <div class="identity-wrap">
+    <div class="identity-bar">
+
+      <!-- State 1: not signed in -->
+      <button class="btn-connect-x" id="connectXBtn" type="button">
+        <svg class="x-logo" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.254 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/>
+        </svg>
+        Connect with X
+      </button>
+
+      <!-- State 2: signed in (hidden until auth) -->
+      <div class="user-pill" id="userPill" style="display:none;">
+        <img class="user-pfp" id="userPfpImg" src="" alt="">
+        <span class="user-handle" id="userHandle">@username</span>
+        <button class="btn-signout" id="signOutBtn" title="Sign out" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+            <polyline points="16 17 21 12 16 7"/>
+            <line x1="21" y1="12" x2="9" y2="12"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <h1 class="title">What do you think<br/>about Solstice?</h1>
+  <p class="subtitle">200 takes max · one per account</p>
+
+  <div class="composer">
+    <textarea class="composer-input" id="textInput" maxlength="200"
+      placeholder="Connect with X to share your take…" disabled></textarea>
+    <div class="composer-footer">
+      <span class="char-count" id="charCount">0 / 200</span>
+      <button class="btn-submit" id="submitBtn" disabled>Post take</button>
+    </div>
+  </div>
+
+  <p class="status-line" id="statusLine"></p>
+
+  <div class="feed-panel" id="feedPanel">
+    <!-- marquee rows injected by script.js -->
+  </div>
+
+</div>
+
+<script type="module" src="script.js"></script>
+
+</body>
+</html>
